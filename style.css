@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .section__title {
+    @apply text-4xl font-medium text-center mb-10;
+  }
+
+  .btn {
+    @apply bg-cyan text-light px-5 py-2.5 rounded-xl hover:bg-cyan/80 transition duration-300 ease-in-out font-medium;
+  }
+}
