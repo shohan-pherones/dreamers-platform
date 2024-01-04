@@ -10,6 +10,6 @@ async function detectProduct(e) {
   if (e.target.classList.contains("add__to__cart__btn")) {
     const btn = e.target;
     const productId = +btn.dataset.id;
-    const product = await fetchSingleProduct(productId);
+    const product = await fetchSingleProduct(productId, btn);
   }
 }
