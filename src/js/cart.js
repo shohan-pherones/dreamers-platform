@@ -1,4 +1,5 @@
 import fetchSingleProduct from "./single-product";
+import store from "./store";
 
 const productsWrapper = document.querySelector(".products__wrapper");
 
@@ -11,5 +12,6 @@ async function detectProduct(e) {
     const btn = e.target;
     const productId = +btn.dataset.id;
     const product = await fetchSingleProduct(productId, btn);
+    store("ADD_PRODUCT", product);
   }
 }
