@@ -1,4 +1,5 @@
 const productsWrapper = document.querySelector(".products__wrapper");
+const errorPopup = document.querySelector(".error__popup");
 
 export function renderLoading(loadingState) {
   const template = `
@@ -73,4 +74,15 @@ export function renderSingleProductLoading(loadingState, element) {
   } else {
     element.textContent = "Add to cart";
   }
+}
+
+export function renderSingleProductError(message) {
+  errorPopup.classList.remove("opacity-0", "-translate-y-40");
+  errorPopup.classList.add("opacity-100", "-translate-y-0");
+  errorPopup.textContent = message;
+
+  setTimeout(() => {
+    errorPopup.classList.remove("opacity-100", "-translate-y-0");
+    errorPopup.classList.add("opacity-0", "-translate-y-40");
+  }, 3000);
 }
