@@ -1,5 +1,8 @@
+import store from "./store";
+
 const productsWrapper = document.querySelector(".products__wrapper");
 const errorPopup = document.querySelector(".error__popup");
+const cartCounter = document.querySelector(".cart__counter");
 
 export function renderLoading(loadingState) {
   const template = `
@@ -85,4 +88,9 @@ export function renderSingleProductError(message) {
     errorPopup.classList.remove("opacity-100", "-translate-y-0");
     errorPopup.classList.add("opacity-0", "-translate-y-40");
   }, 3000);
+}
+
+export function updateCartCounter() {
+  const basket = store();
+  cartCounter.textContent = basket.length;
 }

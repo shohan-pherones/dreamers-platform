@@ -1,3 +1,4 @@
+import { updateCartCounter } from "./render";
 import fetchSingleProduct from "./single-product";
 import store from "./store";
 
@@ -13,5 +14,6 @@ async function detectProduct(e) {
     const productId = +btn.dataset.id;
     const product = await fetchSingleProduct(productId, btn);
     store("ADD_PRODUCT", product);
+    updateCartCounter();
   }
 }
