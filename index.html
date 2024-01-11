@@ -19,10 +19,11 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <li>
-            <button class="relative">
+            <button class="relative cart__btn">
               <span
                 class="cart__counter absolute -right-3 -top-1 w-5 h-5 rounded-full bg-cyan text-xs font-semibold flex items-center justify-center text-white"
-              ></span>
+                >0</span
+              >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -64,6 +65,52 @@
         class="error__popup fixed left-1/2 top-10 -translate-y-40 opacity-0 -translate-x-1/2 z-[100] w-full md:w-96 px-10 py-7 rounded-2xl shadow-2xl shadow-gray/25 bg-rose-50 border-2 border-rose-300 text-rose-600 transition-transform duration-500 ease-in-out"
       >
         <!-- MESSAGE WILL RECEIVE FROM JS -->
+      </div>
+
+      <!-- CART MODAL -->
+      <div
+        class="cart__modal transition duration-500 ease-in-out fixed right-0 top-0 bottom-0 h-full w-96 bg-white/80 z-[100] shadow-xl shadow-gray p-10 backdrop-blur-xl"
+      >
+        <h5 class="mt-10 text-xl font-semibold">
+          Cart items: <span class="cart__items__count">0</span>
+        </h5>
+        <div
+          class="cart__items flex flex-col gap-5 mt-5 max-h-[75%] overflow-y-scroll overflow-x-hidden w-full"
+        >
+          <!-- CART ITEMS STAY HERE -->
+        </div>
+        <div
+          class="subtotal absolute bottom-0 left-0 right-0 z-[101] px-10 py-5 border-t border-gray"
+        >
+          <p class="flex items-center justify-between text-xl font-semibold">
+            <span>Subtotal:</span>
+            <span class="subtotal__holder">$0</span>
+          </p>
+          <button
+            class="inline-block mt-5 bg-orange w-full px-5 py-3 rounded-2xl text-white font-medium hover:bg-orange/80 transition duration-300 ease-in-out"
+          >
+            Proceed to checkout
+          </button>
+        </div>
+        <button
+          class="cart__modal__close__btn absolute z-[101] right-10 top-10"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
       </div>
     </main>
     <footer></footer>
