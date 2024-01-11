@@ -1,6 +1,7 @@
+import { updateLocalStorage } from "./local-storage";
 import { renderSingleProductError } from "./render";
 
-const basket = [];
+const basket = JSON.parse(localStorage.getItem("basket")) || [];
 
 export default function store(action = "VIEW_BASKET", product = {}) {
   switch (action) {
@@ -10,6 +11,7 @@ export default function store(action = "VIEW_BASKET", product = {}) {
         renderSingleProductError("You already added this product");
       } else {
         basket.push(product);
+        updateLocalStorage("basket", basket);
       }
 
     case "VIEW_BASKET":
